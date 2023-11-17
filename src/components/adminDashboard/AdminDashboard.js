@@ -44,18 +44,27 @@ const AdminDashboard = () => {
     event.preventDefault();
     const id = Cookies.get("dhun_user_id");
     try {
+      const categoryDetails = {
+        category_6: price,
+        category_7: category7,
+        category_8: category8,
+        category_9: category9,
+        category_10: category10,
+      };
+      console.log("Category details", categoryDetails);
       const options = {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ amount: { category_6: price } }),
+        body: JSON.stringify({ amount: categoryDetails }),
       };
       const response = await fetch(
         `https://stg.dhunjam.in/account/admin/${id}`,
         options
       );
       console.log(response);
+      console.log(await response.json());
       fetchAdminDetails();
     } catch (error) {
       console.log(error);
@@ -118,7 +127,7 @@ const AdminDashboard = () => {
               <input
                 className="category"
                 type="number"
-                name="category1"
+                name="category7"
                 value={category7}
                 disabled={selectedValue === "No"}
                 onChange={(e) => setCategory7(e.target.value)}
@@ -126,7 +135,7 @@ const AdminDashboard = () => {
               <input
                 className="category"
                 type="number"
-                name="category1"
+                name="category8"
                 value={category8}
                 disabled={selectedValue === "No"}
                 onChange={(e) => setCategory8(e.target.value)}
@@ -134,7 +143,7 @@ const AdminDashboard = () => {
               <input
                 className="category"
                 type="number"
-                name="category1"
+                name="category9"
                 disabled={selectedValue === "No"}
                 value={category9}
                 onChange={(e) => setCategory9(e.target.value)}
@@ -142,7 +151,7 @@ const AdminDashboard = () => {
               <input
                 className="category"
                 type="number"
-                name="category1"
+                name="category10"
                 disabled={selectedValue === "No"}
                 value={category10}
                 onChange={(e) => setCategory10(e.target.value)}
