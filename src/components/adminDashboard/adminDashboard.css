@@ -1,0 +1,119 @@
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+h1 {
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+}
+form {
+  width: 600px;
+}
+.form-group {
+  display: flex;
+}
+.label {
+  width: 300px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /* margin-right: 80px; */
+  font-size: 18px;
+}
+.yes-no-container {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radio {
+  width: 15px;
+}
+.radio:checked + .radio-classification {
+  background-color: #6741d9;
+  color: #fff;
+}
+.radio-classification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.request-amount-input {
+  background-color: #030303;
+  text-align: center;
+  border-radius: 15px;
+  width: 300px;
+  height: 40px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  &::placeholder {
+    color: #ffffff;
+  }
+  &:disabled {
+    background-color: #c2c2c2;
+    cursor: not-allowed;
+  }
+}
+.input-group {
+  display: flex;
+  width: 300px;
+  padding-right: 8px;
+}
+.category {
+  background-color: #030303;
+  border-radius: 15px;
+  border: 1px solid #ffffff;
+  text-align: center;
+  font-size: 16px;
+  padding-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 55px;
+  height: 40px;
+  color: #ffffff;
+
+  margin-right: 10px;
+  &::placeholder {
+    color: #ffffff;
+  }
+  &:disabled {
+    background-color: #c2c2c2;
+    cursor: not-allowed;
+  }
+}
+.chart-container-inner {
+  display: flex;
+}
+.rupee-symbol {
+  margin-top: 30px;
+  font-size: 2em;
+}
+.save-btn {
+  display: block;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+  background-color: #6741d9;
+  margin-bottom: 20px;
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  width: 600px;
+  height: 48px;
+  color: #ffffff;
+  padding-left: 10px;
+
+  &:disabled {
+    background-color: #c2c2c2;
+    cursor: not-allowed;
+  }
+}
+.save-btn:hover {
+  border: 1px solid #f0c3f1;
+}
