@@ -18,12 +18,24 @@ const Graph = (props) => {
     { name: "Category 3", Amount: category9 },
     { name: "Category 4", Amount: category10 },
   ];
+
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip">
+          <p>{`${payload[0].name}: ₹${payload[0].value}`}</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <ResponsiveContainer width="100%" height={350}>
       <BarChart data={data}>
         <XAxis dataKey="name" />
         <YAxis tick={false} />
-        <Tooltip />
+        <Tooltip content={<CustomTooltip />} />
         <Legend content={() => null} />
         <Bar
           dataKey="Amount"
